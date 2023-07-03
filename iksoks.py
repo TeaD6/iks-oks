@@ -1,5 +1,5 @@
 #!/bin/python3
-
+cls = lambda: print("\033c\033[3J", end='') 
 print("Ovo je nasa verzija XO igrice")
 
 def rowData(table,row):
@@ -12,7 +12,7 @@ def dijagonala(t,a):
     return t[0][0]==t[1][1]==t[2][2]==a or t[2][0]==t[1][1]==t[0][2]==a
 
 tabela=[[1,2,3],    [4,5,6],    [7,8,9]]
-
+cls()
 for r in tabela:print(r)
 odigrano=[]
 kraj=0
@@ -26,7 +26,7 @@ for a in ["X","O","X","O","X","O","X","O","X"]:
     red=(pozicija-1)//3
     kolona=(pozicija-1)%3
     tabela [red] [kolona] = a
-    
+    cls()    
     for r in tabela:print(r)
     
     for e in [0,1,2]:
